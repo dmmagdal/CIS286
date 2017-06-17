@@ -1,5 +1,8 @@
 // BagTest.java
-// Tests the Bag class of Bag.java
+// Diego Magdaleno
+// June 16. 2017
+// Lab1
+// Tests the Bag class of Bag.java with fixed int arrays
 
 class BagTest{
 	public static void main(String[] args){
