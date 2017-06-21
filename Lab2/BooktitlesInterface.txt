@@ -1,0 +1,45 @@
+/** Interface for the linkedlist class
+@ author Diego Magdaleno
+@ Version 1.0 **/
+
+class LinkedList{
+	private int numberOfItems;	// stores the number of book titles that are in the list
+	private Node head;	// a pointer to the top of the list
+
+	/** this is a simple constrcutor to initialize a new linkedlist
+	@param tatkes no arguments
+	@return returns nothing **/
+	public LinkedList(){
+	}
+
+	/** adds a new title ot the top of the list
+	@param takes the argument title which is of type T
+	@return returns nothing**/
+	public void add(T title){
+	}
+
+	/** removes a title from the (top) of the list
+	@param takes no arguments
+	@return returns the data stored in the deleted node **/
+	public T remove(){
+	}
+
+	/** looks at what is at the to of the list
+	@param takes no arguments
+	@return returns a string of the title at the top of the list **/
+	public String printTop(){
+	}
+
+	// private class creates node objects for the linkedlist
+	private class Node{
+		private T data; // holds the dat part of a node
+		private Node next; // pointer to the next node (in the linkedlist)
+
+		/** constructor to initialize a new node for the linkedlist. It takes in the argument bookTitle and sets the 'data' 
+		part ot that while the 'next' part to null
+		@param takes the argument bookTitle which is of type T 
+		@return returns nothing **/
+		private Node(T bookTitle){
+		}
+	}
+}

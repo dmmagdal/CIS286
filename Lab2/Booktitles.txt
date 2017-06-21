@@ -1,0 +1,61 @@
+/** Linkedlist class stores, removes, and counts book titles in a linkedlist. It can only interact with the top
+or 'head' of the linked list. A user may also peak at what title is at the top ('head') of the list as well.
+@ author Diego Magdaleno
+@ Version 1.0 **/
+
+class LinkedList{
+	private int numberOfItems;	// stores the number of book titles that are in the list
+	private Node head;	// a pointer to the top of the list
+
+	/** this is a simple constrcutor to initialize a new linkedlist
+	@param tatkes no arguments
+	@return returns nothing **/
+	public LinkedList(){
+		head = null;	// set the top equal to null since it is a new list
+		numberOfItems = 0;	// set the number of items equal to zero since there are not titles in this new list
+	}
+
+	/** adds a new title ot the top of the list
+	@param takes the argument title which is of type T
+	@return returns nothing**/
+	public void add(T title){
+		Node N = new Node(title);	// create the new node storing title
+		N.next = head;	// add the node to the list by setting the 'next' pointer to the 'head' pointer
+		head = N;	// the newest node becomes the top of the list when 'head' is set to point at that node
+		++numberOfItems;	// increment the number of items 
+	}
+
+	/** removes a title from the (top) of the list
+	@param takes no arguments
+	@return returns the data stored in the deleted node **/
+	public T remove(){
+		Node currentNode = head;	// create a new node that stores the top node
+		head = head.next;	// set the top to be the node underneath itself (the next node in the list)
+		--numberOfItems;	// decrement the number of items
+		return currentNode.data;	// return the data from the deleted node
+	}
+
+	/** looks at what is at the to of the list
+	@param takes no arguments
+	@return returns a string of the title at the top of the list **/
+	public String printTop(){
+		T title = remove(); // set the variable title to whatever is at the top of that list by calling the remove() function
+		add(title);	// add that title back into the list, leaving the list back in its former state
+		return (String) title; // convert the title to a string and return it
+	}
+
+	// private class creates node objects for the linkedlist
+	private class Node{
+		private T data; // holds the dat part of a node
+		private Node next; // pointer to the next node (in the linkedlist)
+
+		/** constructor to initialize a new node for the linkedlist. It takes in the argument bookTitle and sets the 'data' 
+		part ot that while the 'next' part to null
+		@param takes the argument bookTitle which is of type T 
+		@return returns nothing **/
+		private Node(T bookTitle){
+			data = booktitle; // set data to bookTitle
+			next = null; // set next to null
+		}
+	}
+}
