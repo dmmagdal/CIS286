@@ -3,7 +3,7 @@ or 'head' of the linked list. A user may also peak at what title is at the top (
 @ author Diego Magdaleno
 @ Version 1.0 **/
 
-class LinkedList{
+public final class BooktitlesLinkedList<T> implements BooktitlesInterface<T>{
 	private int numberOfItems;	// stores the number of book titles that are in the list
 	private Node head;	// a pointer to the top of the list
 
@@ -11,37 +11,59 @@ class LinkedList{
 	@param tatkes no arguments
 	@return returns nothing **/
 	public LinkedList(){
-		head = null;	// set the top equal to null since it is a new list
-		numberOfItems = 0;	// set the number of items equal to zero since there are not titles in this new list
+		// set the top equal to null since it is a new list
+		// set the number of items equal to zero since there are not titles in this new list
 	}
 
 	/** adds a new title ot the top of the list
 	@param takes the argument title which is of type T
 	@return returns nothing**/
 	public void add(T title){
-		Node N = new Node(title);	// create the new node storing title
-		N.next = head;	// add the node to the list by setting the 'next' pointer to the 'head' pointer
-		head = N;	// the newest node becomes the top of the list when 'head' is set to point at that node
-		++numberOfItems;	// increment the number of items 
+		// create the new node storing title
+		// add the node to the list by setting the 'next' pointer to the 'head' pointer
+		// the newest node becomes the top of the list when 'head' is set to point at that node
+		// increment the number of items 
 	}
 
 	/** removes a title from the (top) of the list
 	@param takes no arguments
 	@return returns the data stored in the deleted node **/
 	public T remove(){
-		Node currentNode = head;	// create a new node that stores the top node
-		head = head.next;	// set the top to be the node underneath itself (the next node in the list)
-		--numberOfItems;	// decrement the number of items
-		return currentNode.data;	// return the data from the deleted node
+		// if isEmpty() returns false
+			// create a new node that stores the top node
+			// set the top to be the node underneath itself (the next node in the list)
+			// decrement the number of items
+			// return the data from the deleted node
+		// otherwise, return null
 	}
 
 	/** looks at what is at the to of the list
 	@param takes no arguments
 	@return returns a string of the title at the top of the list **/
 	public String printTop(){
-		T title = remove(); // set the variable title to whatever is at the top of that list by calling the remove() function
-		add(title);	// add that title back into the list, leaving the list back in its former state
-		return (String) title; // convert the title to a string and return it
+		// if isEmpty() returns false
+			// set the variable title to whatever is at the top of that list by calling the remove() function
+			// add that title back into the list, leaving the list back in its former state
+			// convert the title to a string and return it
+		// otherwise, create a new string that holds the word "Empty" and return it
+	}	
+
+	/** tells whether or not the list is empty
+	@param takes no arguments
+	@return returns true if list is empty and returns false if list is not empty **/
+	public boolean isEmpty(){
+		// delcare a boolean variable 'empty' and set it to false 
+		// if the number of items is not 0 or the top ('head') is null
+			// change 'empty' to true
+		// return 'empty'
+	}
+
+	/** clears out the entire stack
+	@param takes no arguments
+	@return returns nothing **/
+	public void clearAll(){
+		// while isEmpty() is false
+			// remove()
 	}
 
 	// private class creates node objects for the linkedlist
@@ -54,8 +76,8 @@ class LinkedList{
 		@param takes the argument bookTitle which is of type T 
 		@return returns nothing **/
 		private Node(T bookTitle){
-			data = booktitle; // set data to bookTitle
-			next = null; // set next to null
+			// set data to bookTitle
+			// set next to null
 		}
 	}
 }
