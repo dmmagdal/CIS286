@@ -68,7 +68,7 @@ public final class Stack<T> implements LinkedListInterface<T>{
 		if (numberOfItems == 0 || topOfStack = null){
 			empty = true;
 		}
-		return empty
+		return empty;
 	}
 
 	/** clears out the entire stack

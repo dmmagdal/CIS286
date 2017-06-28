@@ -1,4 +1,4 @@
-/** Interface for the Stack class
+/** Interface for the stack class
 @ author Diego Magdaleno
 @ Version 1.0 **/
 
