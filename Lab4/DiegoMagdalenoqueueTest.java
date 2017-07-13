@@ -61,11 +61,9 @@ class queueTest{
 		System.out.println("\n");
 
 		
-		/*
 		// call dequeue on an empty queue
-		System.out.println(s.dequeue()); // should throw a null pointer exception
-		//tested: it does
-		*/
+		System.out.println(s.dequeue()+"\n"); // should print "null"
+		
 
 		System.out.println("The queue is empty: "+s.isEmpty()+".\n"); // should have "true" at the end
 	}

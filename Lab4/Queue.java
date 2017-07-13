@@ -37,18 +37,23 @@ public final class Queue<T>{
 	@param takes no arguments
 	@return returns the data from the front of the queue (or null if it didn't succeed in removing the node or the queue is empty) **/
 	public T dequeue(){
-		Node n = front;
-		if (!isEmpty() && numberOfItems != 1){ // if the queue is not empty or there are more than one items in the queue, remove the front node and reset it
-			front = getPrev(front); // set front to the node before it
-			front.next = null; // severe reference to the "old front" by setting the next pointer to null on the new front
-			numberOfItems--;
+		if (front != null){ // execute if the queue is not empty
+			Node n = front;
+			if (!isEmpty() && numberOfItems != 1){ // if the queue is not empty or there are more than one items in the queue, remove the front node and reset it
+				front = getPrev(front); // set front to the node before it
+				front.next = null; // severe reference to the "old front" by setting the next pointer to null on the new front
+				numberOfItems--;
+			}
+			else if (!isEmpty() && numberOfItems == 1){ // if there is only one item in the queue, set the front and back equal to null
+				front = null; // since there is only one item in the queue and we're dequeuing, we set the back and fromt to null
+				back = front;
+				numberOfItems--;
+			}
+			return n.data;
 		}
-		else if (!isEmpty() && numberOfItems == 1){ // if there is only one item in the queue, set the front and back equal to null
-			front = null; // since there is only one item in the queue and we're dequeuing, we set the back and fromt to null
-			back = front;
-			numberOfItems--;
+		else{ // execute if the queue is empty
+			return null;
 		}
-		return n.data;
 	}
 
 	/** retrieves what is at the front of the queue (getFront() function)
