@@ -48,7 +48,7 @@ class queueTest{
 				System.out.println("failed to add "+items[i]+" to queue.\n");
 			}
 		}
-		System.out.println("There are "+s.size()+" items in the stack.\n"); // size should be 6 after the final enqueues
+		System.out.println("There are "+s.size()+" items in the queue.\n"); // size should be 6 after the final enqueues
 
 		// test the peek function
 		System.out.println(s.peek()+" is at the front of the queue.\n"); // should print the front of the queue ("Two")
