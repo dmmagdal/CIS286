@@ -6,8 +6,8 @@ Version 4.0 **/
 
 public final class BinaryNode<T>{
 	private T data;					// stores the data in a BinaryNode
-	private BinaryNode leftChild;	// reference to the left child
-	private BinaryNode rightChild;	// reference to the right child
+	private BinaryNode<T> leftChild;	// reference to the left child
+	private BinaryNode<T> rightChild;	// reference to the right child
 
 	// constructor for BinaryNode
 	public BinaryNode(){
@@ -18,7 +18,7 @@ public final class BinaryNode<T>{
 		this(entry, null, null);
 	}
 
-	public BinaryNode(T entry, BinaryNode left, BinaryNode right){
+	public BinaryNode(T entry, BinaryNode<T> left, BinaryNode<T> right){
 		data = entry;
 		leftChild = left;
 		rightChild = right;
